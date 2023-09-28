@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="scroll_driver" fitToHeight="true" fitToWidth="true" pannable="true" prefHeight="1455.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.renesas.cdt.ddsc.v11n.apltool.motor.sensorless.controller.MotorDriverController">
+   <content>
+      <Group>
+         <children>
+            <StackPane prefHeight="1446.0" prefWidth="1106.0">
+               <children>
+                  <Group>
+                     <children>
+                        <AnchorPane layoutX="-1.0" layoutY="-2.0" prefHeight="1447.0" prefWidth="1105.0">
+                           <children>
+                              <TitledPane fx:id="pane_driver" animated="false" collapsible="false" ellipsisString="ADC and PWM Modulation Driver" layoutX="315.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1441.0" prefWidth="680.0" text="ADC and PWM Modulation Driver" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="2.0">
+                                 <content>
+                                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1388.0" prefWidth="680.0">
+                                       <children>
+                                          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="585.0" layoutX="53.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="507.0" />
+                                          <Label alignment="CENTER" layoutX="85.0" layoutY="35.0" prefHeight="20.0" prefWidth="500.0" styleClass="heading1" text="3-Phase PWM" />
+                                          <Group layoutX="400.0" layoutY="60.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+                                                <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="U-Phase PWM Timer" />
+                                                <Group layoutX="5.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="5.0" text="GPT U-Channel" />
+                                                      <TextField fx:id="value_pwm_uchan" alignment="CENTER_RIGHT" layoutX="88.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                          <Group layoutX="400.0" layoutY="140.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+                                                <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="V-Phase PWM Timer" />
+                                                <Group layoutX="5.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="5.0" text="GPT V-Channel" />
+                                                      <TextField fx:id="value_pwm_vchan" alignment="CENTER_RIGHT" layoutX="88.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                          <Group layoutX="400.0" layoutY="220.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+                                                <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="W-Phase PWM Timer" />
+                                                <Group layoutX="5.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="5.0" text="GPT W-Channel" />
+                                                      <TextField fx:id="value_pwm_wchan" alignment="CENTER_RIGHT" layoutX="88.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                          <Group layoutX="85.0" layoutY="134.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="362.0" layoutX="-21.0" stroke="BLACK" strokeType="INSIDE" width="302.0" />
+                                                <Label layoutX="-17.0" layoutY="5.0" styleClass="heading1" text="PWM General Settings" wrapText="true" />
+                                                <Group layoutX="-17.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="PWM Timer Frequency [Mhz]" />
+                                                      <TextField fx:id="value_pwm_freq" alignment="CENTER_RIGHT" layoutX="175.0" prefHeight="25.0" prefWidth="70.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="-17.0" layoutY="60.0">
+                                                   <children>
+                                                      <Label layoutY="-4.0" prefHeight="32.0" prefWidth="115.0" text="PWM Carrier Period [Microseconds]" wrapText="true" />
+                                                      <TextField fx:id="value_pwm_period" alignment="CENTER_RIGHT" layoutX="175.0" prefHeight="25.0" prefWidth="70.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="-17.0" layoutY="90.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="Dead Time [Raw Counts]" />
+                                                      <TextField fx:id="value_dead_time" alignment="CENTER_RIGHT" layoutX="175.0" prefHeight="25.0" prefWidth="70.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="-17.0" layoutY="120.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="Maximum Duty" />
+                                                      <TextField fx:id="value_max_duty" alignment="CENTER_RIGHT" layoutX="175.0" prefHeight="25.0" prefWidth="70.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="-17.0" layoutY="151.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="PWM output port UP" />
+                                                      <TextField fx:id="value_pwm_out_up" alignment="CENTER_RIGHT" layoutX="123.0" prefHeight="25.0" prefWidth="170.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="-17.0" layoutY="184.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="PWM output port UN" />
+                                                      <TextField fx:id="value_pwm_out_un" alignment="CENTER_RIGHT" layoutX="123.0" prefHeight="25.0" prefWidth="170.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="-17.0" layoutY="216.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="PWM output port VP" />
+                                                      <TextField fx:id="value_pwm_out_vp" alignment="CENTER_RIGHT" layoutX="123.0" prefHeight="25.0" prefWidth="170.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="-17.0" layoutY="250.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="PWM output port VN" />
+                                                      <TextField fx:id="value_pwm_out_vn" alignment="CENTER_RIGHT" layoutX="123.0" prefHeight="25.0" prefWidth="170.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="-17.0" layoutY="285.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="PWM output port WP" />
+                                                      <TextField fx:id="value_pwm_out_wp" alignment="CENTER_RIGHT" layoutX="123.0" prefHeight="25.0" prefWidth="170.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="-17.0" layoutY="323.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="PWM output port WN" />
+                                                      <TextField fx:id="value_pwm_out_wn" alignment="CENTER_RIGHT" layoutX="123.0" prefHeight="25.0" prefWidth="170.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                          <Group layoutX="64.0" layoutY="511.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="90.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                                                <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="Pin Stop Level" wrapText="true" />
+                                                <Group layoutX="5.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="GTIOCA Stop Level" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="5.0" layoutY="60.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="GTIOCB Stop Level" />
+                                                   </children>
+                                                </Group>
+                                                <ComboBox fx:id="value_gtioca_stop" layoutX="115.0" layoutY="30.0" prefWidth="80.0" promptText="High" visibleRowCount="2" />
+                                                <ComboBox fx:id="value_gtiocb_stop" layoutX="115.0" layoutY="60.0" prefWidth="80.0" promptText="High" visibleRowCount="2" />
+                                             </children>
+                                          </Group>
+                                          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="762.0" layoutX="53.0" layoutY="622.0" stroke="BLACK" strokeType="INSIDE" width="614.0" />
+                                          <Label alignment="CENTER" layoutX="52.0" layoutY="625.0" prefHeight="20.0" prefWidth="576.0" styleClass="heading1" text="A/D Converter" />
+                                          <Group layoutX="374.0" layoutY="859.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="120.0" stroke="BLACK" strokeType="INSIDE" width="275.0" />
+                                                <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="Phase Current Measurement Settings" wrapText="true" />
+                                                <Group layoutX="5.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="Current Range [A]" />
+                                                      <TextField fx:id="value_current_range" alignment="CENTER_RIGHT" layoutX="182.0" prefHeight="25.0" prefWidth="80.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="5.0" layoutY="60.0">
+                                                   <children>
+                                                      <Label layoutY="-4.0" prefHeight="32.0" prefWidth="146.0" text="Offset of A/D conversion for current" wrapText="true" />
+                                                      <TextField fx:id="value_current_offset" alignment="CENTER_RIGHT" layoutX="182.0" prefHeight="25.0" prefWidth="80.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="5.0" layoutY="90.0">
+                                                   <children>
+                                                      <Label layoutY="-4.0" prefHeight="32.0" prefWidth="143.0" text="Counts for current offset measurement" wrapText="true" />
+                                                      <TextField fx:id="value_current_offset_count" alignment="CENTER_RIGHT" layoutX="182.0" prefHeight="25.0" prefWidth="80.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                          <Group layoutX="333.0" layoutY="995.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="90.0" stroke="BLACK" strokeType="INSIDE" width="317.0" />
+                                                <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="Bus Voltage Measurement Settings" wrapText="true" />
+                                                <Group layoutX="5.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="Voltage Range [V]" />
+                                                      <TextField fx:id="value_voltage_range" alignment="CENTER_RIGHT" layoutX="225.0" prefHeight="25.0" prefWidth="80.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="5.0" layoutY="60.0">
+                                                   <children>
+                                                      <Label layoutY="-4.0" prefHeight="32.0" prefWidth="205.0" text="Conversion level for A/D conversion for voltage" wrapText="true" />
+                                                      <TextField fx:id="value_voltage_conversion_level" alignment="CENTER_RIGHT" layoutX="225.0" prefHeight="25.0" prefWidth="80.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                          <Line endX="400.0" layoutY="75.0" />
+                                          <Line endX="380.0" layoutY="95.0" />
+                                          <Line endX="372.5" endY="-0.5000152587890625" layoutY="115.0" />
+                                          <Line endX="680.0" layoutY="76.0" startX="550.0" />
+                                          <Polyline fill="WHITE" layoutX="287.0" layoutY="197.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 113.4000244140625, -122.5, 99.79997253417969, -129.60000610351562" strokeType="INSIDE" />
+                                          <Line endY="60.0" layoutX="380.0" layoutY="95.0" />
+                                          <Line endX="400.0" layoutY="155.0" startX="380.0" />
+                                          <Polyline fill="WHITE" layoutX="287.0" layoutY="277.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 113.4000244140625, -122.5, 99.79997253417969, -129.60000610351562" strokeType="INSIDE" />
+                                          <Line endY="120.0" layoutX="373.0" layoutY="115.0" />
+                                          <Line endX="400.0" layoutY="235.0" startX="372.5999755859375" startY="1.52587890625E-5" />
+                                          <Polyline fill="WHITE" layoutX="287.0" layoutY="357.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 113.4000244140625, -122.5, 99.79997253417969, -129.60000610351562" strokeType="INSIDE" />
+                                          <Label layoutX="340.0" layoutY="60.0" styleClass="symbol1" text="Vu" />
+                                          <Label layoutX="340.0" layoutY="80.0" styleClass="symbol1" text="Vv" />
+                                          <Label layoutX="340.0" layoutY="100.0" styleClass="symbol1" text="Vw" />
+                                          <Line endX="490.0" layoutX="150.0" layoutY="155.0" startX="400.0" />
+                                          <Line endX="509.0" layoutX="150.0" layoutY="235.0" startX="400.0" />
+                                          <Line endY="60.0" layoutX="640.0" layoutY="95.0" />
+                                          <Line endY="120.0" layoutX="660.0" layoutY="115.0" />
+                                          <Line endX="680.0" layoutY="95.0" startX="640.0" />
+                                          <Line endX="680.0" layoutY="115.5" startX="660.0" />
+                                          <Label layoutX="660.0" layoutY="60.0" styleClass="symbol1" text="Mu" />
+                                          <Label layoutX="660.0" layoutY="80.0" styleClass="symbol1" text="Mv" />
+                                          <Label layoutX="660.0" layoutY="100.0" styleClass="symbol1" text="Mw" />
+                                          <Line endY="563.0" layoutX="620.0" layoutY="240.0" strokeDashOffset="1.0" strokeLineJoin="ROUND" strokeMiterLimit="100.0" />
+                                          <Line endX="2.5" endY="696.0" layoutX="581.0" layoutY="75.0" strokeLineJoin="ROUND" />
+                                          <Circle layoutX="620.0" layoutY="235.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                          <Circle layoutX="581.0" layoutY="75.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                          <Line endX="620.0" layoutX="-18.0" layoutY="787.0" startX="360.5999755859375" strokeDashOffset="1.0" strokeLineJoin="ROUND" strokeMiterLimit="100.0" />
+                                          <Line endX="605.0" layoutX="-23.0" layoutY="771.0" startX="320.0" strokeDashOffset="1.0" strokeLineJoin="ROUND" strokeMiterLimit="100.0" />
+                                          <Line endX="1.220703125E-4" endY="941.2000122070312" layoutX="361.0" layoutY="36.0" startX="1.220703125E-4" startY="768.0" strokeDashOffset="1.0" strokeLineJoin="ROUND" strokeMiterLimit="100.0" />
+                                          <Line endX="359.20001220703125" layoutX="2.0" layoutY="978.0" startX="295.0" strokeDashOffset="1.0" strokeLineJoin="ROUND" strokeMiterLimit="100.0" />
+                                          <Polyline fill="WHITE" layoutX="198.0" layoutY="1100.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 87.20001220703125, -122.5, 99.79997253417969, -129.60000610351562" strokeType="INSIDE" />
+                                          <Polyline fill="WHITE" layoutX="197.0" layoutY="893.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 87.20001220703125, -122.5, 99.79997253417969, -129.60000610351562" strokeType="INSIDE" />
+                                          <Label layoutX="301.0" layoutY="757.0" styleClass="symbol1" text="iu" />
+                                          <Label layoutX="301.0" layoutY="964.0" styleClass="symbol1" text="iw" />
+                                          <Line endX="85.0" layoutY="774.0" startX="43.75" startY="0.20709228515625" />
+                                          <Line endX="85.0" layoutY="980.0" startX="20.0" />
+                                          <Line endX="-0.5" endY="980.0" layoutX="20.0" startY="275.0" />
+                                          <Line endX="-0.95709228515625" endY="773.29296875" layoutX="44.0" startY="229.0" />
+                                          <Line endX="42.79290771484375" endY="0.2928924560546875" layoutY="229.0" />
+                                          <Line endX="20.0" layoutY="275.0" />
+                                          <Label layoutX="5.0" layoutY="215.0" styleClass="symbol1" text="iu" />
+                                          <Label layoutX="5.0" layoutY="260.0" styleClass="symbol1" text="iw" />
+                                          <Line endX="28.0" layoutX="2.0" layoutY="251.0" />
+                                          <Line endX="1.5" endY="898.5000610351562" layoutX="31.0" layoutY="-24.0" startY="275.0" />
+                                          <Label layoutX="6.0" layoutY="236.0" styleClass="symbol1" text="iv" />
+                                          <Line endX="94.0" layoutX="-7.0" layoutY="875.0" startX="40.0" />
+                                          <Line endX="341.0" layoutY="874.0" startX="295.0" strokeDashOffset="1.0" strokeLineJoin="ROUND" strokeMiterLimit="100.0" />
+                                          <Polyline fill="WHITE" layoutX="198.0" layoutY="996.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 87.20001220703125, -122.5, 99.79997253417969, -129.60000610351562" strokeType="INSIDE" />
+                                          <Label layoutX="301.0" layoutY="860.0" styleClass="symbol1" text="iv" />
+                                          <Line endY="520.0" layoutX="342.0" layoutY="354.0" startY="433.0" strokeDashOffset="1.0" strokeLineJoin="ROUND" strokeMiterLimit="100.0" />
+                                          <Circle layoutX="602.0" layoutY="156.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                          <Line endY="623.7999877929688" layoutX="602.0" layoutY="162.0" strokeDashOffset="1.0" strokeLineJoin="ROUND" strokeMiterLimit="100.0" />
+                                          <Line endX="567.5999755859375" layoutX="51.0" layoutY="803.0" startX="310.0" strokeDashOffset="1.0" strokeLineJoin="ROUND" strokeMiterLimit="100.0" />
+                                          <Group layoutX="86.0" layoutY="1060.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="93.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                                                <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="Sin Signal" />
+                                                <Group layoutX="5.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="5.0" text="A/D Conversion Channel" />
+                                                      <TextField fx:id="value_ad_sinchan" alignment="CENTER_RIGHT" layoutX="140.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="5.0" layoutY="62.0">
+                                                   <children>
+                                                      <Label layoutX="1.0" layoutY="5.0" text="A/D Conversion Unit" />
+                                                      <TextField fx:id="value_ad_sinunit" alignment="CENTER_RIGHT" layoutX="140.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                          <Group layoutX="87.0" layoutY="1164.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="93.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                                                <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="Cos Signal" />
+                                                <Group layoutX="5.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="5.0" text="A/D Conversion Channel" />
+                                                      <TextField fx:id="value_ad_coschan" alignment="CENTER_RIGHT" layoutX="140.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="5.0" layoutY="62.0">
+                                                   <children>
+                                                      <Label layoutX="1.0" layoutY="5.0" text="A/D Conversion Unit" />
+                                                      <TextField fx:id="value_ad_cosunit" alignment="CENTER_RIGHT" layoutX="140.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                          <Group layoutX="85.0" layoutY="751.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="92.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                                                <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="U-Phase Current" />
+                                                <Group layoutX="5.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="5.0" text="A/D Conversion Channel" />
+                                                      <TextField fx:id="value_ad_uchan" alignment="CENTER_RIGHT" layoutX="140.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="5.0" layoutY="61.0">
+                                                   <children>
+                                                      <Label layoutY="5.0" text="A/D Conversion Unit" />
+                                                      <TextField fx:id="value_ad_uunit" alignment="CENTER_RIGHT" layoutX="140.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                          <Group layoutX="88.0" layoutY="852.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="89.0" layoutX="-3.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                                                <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="V-Phase Current" />
+                                                <Group layoutX="1.0" layoutY="28.0">
+                                                   <children>
+                                                      <Label layoutY="5.0" text="A/D Conversion Channel" />
+                                                      <TextField fx:id="value_ad_vchan" alignment="CENTER_RIGHT" layoutX="140.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="1.0" layoutY="60.0">
+                                                   <children>
+                                                      <Label layoutY="4.0" text="A/D Conversion Unit" />
+                                                      <TextField fx:id="value_ad_vunit" alignment="CENTER_RIGHT" layoutX="140.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                          <Group layoutX="86.0" layoutY="955.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="94.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                                                <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="W-Phase Current" />
+                                                <Group layoutX="5.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="5.0" text="A/D Conversion Channel" />
+                                                      <TextField fx:id="value_ad_wchan" alignment="CENTER_RIGHT" layoutX="140.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="5.0" layoutY="63.0">
+                                                   <children>
+                                                      <Label layoutX="1.0" layoutY="5.0" text="A/D Conversion Unit" />
+                                                      <TextField fx:id="value_ad_wunit" alignment="CENTER_RIGHT" layoutX="140.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                          <Group layoutX="88.0" layoutY="1269.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="93.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                                                <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="Main Line Voltage" />
+                                                <Group layoutX="5.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="5.0" text="A/D Conversion Channel" />
+                                                      <TextField fx:id="value_ad_voltchan" alignment="CENTER_RIGHT" layoutX="140.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="5.0" layoutY="62.0">
+                                                   <children>
+                                                      <Label layoutX="1.0" layoutY="5.0" text="A/D Conversion Unit" />
+                                                      <TextField fx:id="value_ad_voltunit" alignment="CENTER_RIGHT" layoutX="140.0" prefHeight="25.0" prefWidth="50.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                          <Line endX="86.0" layoutX="-1.0" layoutY="1089.0" startX="1.00006103515625" />
+                                          <Line endX="75.0" layoutX="-82.0" layoutY="1107.0" startX="68.0" />
+                                          <Label layoutX="7.0" layoutY="1075.0" styleClass="symbol1" text="sin" />
+                                          <Line endX="85.0" layoutX="1.0" layoutY="1189.0" startX="1.00006103515625" />
+                                          <Label layoutX="6.0" layoutY="1175.0" styleClass="symbol1" text="cos" />
+                                          <Group layoutX="86.0" layoutY="644.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="94.0" stroke="BLACK" strokeType="INSIDE" width="438.0" />
+                                                <Label layoutX="164.0" layoutY="6.0" styleClass="heading1" text="A/D General Settings" wrapText="true" />
+                                                <Group layoutX="5.0" layoutY="30.0">
+                                                   <children>
+                                                      <Label layoutY="-4.0" prefHeight="32.0" prefWidth="116.0" text="Resolution of A/D Setting" wrapText="true">
+                                                         <font>
+                                                            <Font name="Arial" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="value_ad_resolution" alignment="CENTER_RIGHT" layoutX="110.0" prefHeight="25.0" prefWidth="80.0" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="218.982421875" layoutY="25.0">
+                                                   <children>
+                                                      <Label layoutX="6.017578125" prefHeight="32.0" prefWidth="116.0" text="ADC interrupt module" wrapText="true">
+                                                         <font>
+                                                            <Font name="Arial" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <ComboBox fx:id="value_ad_interrupt_module" layoutX="129.017578125" layoutY="4.0" prefWidth="80.0" promptText="1st" visibleRowCount="2" />
+                                                   </children>
+                                                </Group>
+                                                <Group layoutX="5.0" layoutY="63.0">
+                                                   <children>
+                                                      <Label layoutY="-4.0" prefHeight="32.0" prefWidth="116.0" text="Using ADC scan group" wrapText="true">
+                                                         <font>
+                                                            <Font name="Arial" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="value_ad_scan_group" alignment="CENTER_RIGHT" layoutX="110.0" prefHeight="25.0" prefWidth="80.0" />
+                                                   </children>
+                                                </Group>
+                                             </children>
+                                          </Group>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <Pane id="pane-estimate" fx:id="pane_estimate" layoutX="152.0" layoutY="410.0" prefHeight="60.0" prefWidth="120.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="10.0" layoutY="5.0" prefHeight="50.0" prefWidth="100.0" text="Motor Angle Driver" textAlignment="CENTER" wrapText="true" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane id="pane-speed" fx:id="pane_speed" layoutX="15.0" layoutY="55.0" prefHeight="325.0" prefWidth="120.0">
+                                 <children>
+                                    <Label layoutX="10.0" layoutY="143.0" prefHeight="40.0" prefWidth="100.0" text="Motor Speed Controller" textAlignment="CENTER" wrapText="true" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane id="pane-current" fx:id="pane_current" layoutX="165.0" layoutY="55.0" prefHeight="325.0" prefWidth="120.0">
+                                 <children>
+                                    <Label layoutX="10.0" layoutY="143.0" prefHeight="40.0" prefWidth="100.0" text="Motor Current Controller" textAlignment="CENTER" wrapText="true">
+                                       <font>
+                                          <Font name="System" size="12.0" />
+                                       </font></Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Line endX="30.0" layoutX="135.0" layoutY="120.0" />
+                              <Line endY="59.0" layoutX="75.0" layoutY="381.0" />
+                              <Polyline fill="WHITE" layoutX="172.0" layoutY="451.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                              <Line endY="29.0" layoutX="175.0" layoutY="381.0" />
+                              <Line endY="29.0" layoutX="267.0" layoutY="381.0" />
+                              <Line endY="29.0" layoutX="242.0" layoutY="381.0" />
+                              <Line endY="29.0" layoutX="217.0" layoutY="381.0" />
+                              <Line endY="29.0" layoutX="191.0" layoutY="381.0" />
+                              <Line endX="74.19996643066406" layoutX="75.0" layoutY="440.0" />
+                              <Polyline fill="WHITE" layoutX="364.0" layoutY="459.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -48.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                              <Polyline fill="WHITE" layoutX="339.0" layoutY="459.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -48.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                              <Polyline fill="WHITE" layoutX="314.0" layoutY="459.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -48.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                              <Polyline fill="WHITE" layoutX="289.0" layoutY="459.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -48.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                              <Polyline fill="WHITE" layoutX="272.0" layoutY="450.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                              <Label layoutX="82.0" layoutY="398.0" styleClass="symbol1" text="ω" />
+                              <Line endX="30.0" layoutX="135.0" layoutY="140.0" />
+                              <Line endX="30.0" layoutX="135.0" layoutY="160.0" />
+                              <Line endX="30.0" layoutX="285.0" layoutY="115.0" AnchorPane.topAnchor="116.5" />
+                              <Line endX="30.0" layoutX="285.0" layoutY="135.5" AnchorPane.topAnchor="136.5" />
+                              <Line endX="30.0" layoutX="285.0" layoutY="155.0" AnchorPane.topAnchor="156.5" />
+                              <Line endX="30.0" layoutX="135.0" layoutY="297.0" AnchorPane.topAnchor="296.5" />
+                              <Line endX="30.0" layoutX="135.0" layoutY="317.0" AnchorPane.topAnchor="316.5" />
+                              <Line endX="30.0" layoutX="285.0" layoutY="271.0" startX="10.0" AnchorPane.topAnchor="270.5" />
+                              <Line endX="30.0" layoutX="285.0" layoutY="315.0" startX="10.0" AnchorPane.topAnchor="316.5" />
+                              <Line endX="36.0" layoutX="995.0" layoutY="116.0" AnchorPane.topAnchor="117.0" />
+                              <Line endX="30.0" layoutX="995.0" layoutY="136.0" AnchorPane.topAnchor="137.0" />
+                              <Line endX="36.0" layoutX="995.0" layoutY="156.0" AnchorPane.topAnchor="157.0" />
+                              <Group id="group-motor" layoutX="1065.0" layoutY="137.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <children>
+                                    <Circle fx:id="circle_motor" fill="#ffffff00" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="circle-motor" />
+                                    <Label blendMode="SRC_ATOP" layoutX="-17.0" layoutY="-8.0" mouseTransparent="true" text="PMSM" textAlignment="CENTER" />
+                                 </children>
+                              </Group>
+                              <Label layoutX="137.0" layoutY="145.0" styleClass="symbol1" text="ω*" />
+                              <Label layoutX="137.0" layoutY="105.0" styleClass="symbol1" text="id*" />
+                              <Label layoutX="137.0" layoutY="125.0" styleClass="symbol1" text="iq*" />
+                              <Label layoutX="150.0" layoutY="282.0" styleClass="symbol1" text="id" />
+                              <Label layoutX="150.0" layoutY="302.0" styleClass="symbol1" text="iq" />
+                              <Polyline fill="WHITE" layoutX="47.0" layoutY="420.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 87.20001220703125, -122.5, 99.79997253417969, -129.60000610351562" strokeType="INSIDE" />
+                              <Polyline fill="WHITE" layoutX="47.0" layoutY="440.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 87.20001220703125, -122.5, 99.79997253417969, -131.20001220703125" strokeType="INSIDE" />
+                              <Polyline fill="WHITE" layoutX="53.0" layoutY="262.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 113.4000244140625, -122.5, 99.79997253417969, -129.60000610351562" strokeType="INSIDE" />
+                              <Polyline fill="WHITE" layoutX="53.0" layoutY="242.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 113.4000244140625, -122.5, 99.79997253417969, -129.60000610351562" strokeType="INSIDE" />
+                              <Polyline fill="WHITE" layoutX="53.0" layoutY="282.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 113.4000244140625, -122.5, 99.79998779296875, -129.60000610351562" strokeType="INSIDE" />
+                              <Polyline fill="WHITE" layoutX="197.0" layoutY="392.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 87.20001220703125, -122.5, 99.79997253417969, -129.60000610351562" strokeType="INSIDE" />
+                              <Polyline fill="WHITE" layoutX="197.0" layoutY="440.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 87.20001220703125, -122.5, 99.79997253417969, -131.20001220703125" strokeType="INSIDE" />
+                              <Label layoutX="270.0" layoutY="384.0" styleClass="symbol1" text="id" />
+                              <Label layoutX="247.0" layoutY="384.0" styleClass="symbol1" text="iq" />
+                              <Label layoutX="194.0" layoutY="384.0" styleClass="symbol1" text="Vq*" />
+                              <Label layoutX="220.0" layoutY="384.0" styleClass="symbol1" text="Vd*" />
+                              <Label layoutX="164.0" layoutY="392.0" styleClass="symbol1" text="θ" />
+                              <Polyline fill="WHITE" layoutX="197.0" layoutY="416.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 87.20001220703125, -122.5, 99.79997253417969, -131.20001220703125" strokeType="INSIDE" />
+                              <Line endX="30.0" layoutX="287.0" layoutY="293.0" startX="10.0" />
+                              <Polyline fill="WHITE" layoutX="184.0" layoutY="575.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 87.20001220703125, -122.5, 99.79997253417969, -131.20001220703125" strokeType="INSIDE" />
+                              <Polyline fill="WHITE" layoutX="184.0" layoutY="554.0" points="99.79998779296875, -129.60000610351562, 99.79998779296875, -115.20001220703125, 87.20001220703125, -122.5, 99.79997253417969, -131.20001220703125" strokeType="INSIDE" />
+                              <Line endX="9.0" layoutX="295.0" layoutY="431.0" startX="-11.199951171875" startY="-0.20001220703125" />
+                              <Line endX="1.0" layoutX="294.0" layoutY="451.0" startX="-10.0" />
+                              <Line endX="85.0" layoutX="229.0" layoutY="1130.0" startX="76.0" />
+                              <Line endX="96.0" layoutX="220.0" layoutY="1230.0" startX="76.0" />
+                           </children>
+                        </AnchorPane>
+                        <Line endX="0.5" endY="1040.0" layoutX="294.0" layoutY="188.0" startX="0.50006103515625" startY="261.3999938964844" />
+                        <Line endX="0.5" endY="960.0" layoutX="303.0" layoutY="168.0" startX="0.50006103515625" startY="261.3999938964844" />
+                     </children>
+                  </Group>
+               </children>
+            </StackPane>
+         </children>
+      </Group>
+   </content>
+</ScrollPane>

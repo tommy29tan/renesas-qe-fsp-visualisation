@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="scroll_speed" fitToHeight="true" fitToWidth="true" pannable="true" prefHeight="550.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.renesas.cdt.ddsc.v11n.apltool.motor.sensorless.controller.MotorSpeedController">
+  <content>
+      <Group autoSizeChildren="false">
+         <children>
+            <StackPane>
+               <children>
+                  <Group>
+                     <children>
+                      <AnchorPane>
+                           <children>
+                              <TitledPane animated="false" collapsible="false" layoutX="20.0" layoutY="32.0" prefHeight="490.0" prefWidth="850.0" text="Motor Speed Controller" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                 <content>
+                                    <TabPane fx:id="pane_speed" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="20.0" tabMaxWidth="100.0">
+                                      <tabs>
+                                        <Tab fx:id="tab_sensorless" closable="false" text="Sensorless State">
+                                          <content>
+                                            <AnchorPane blendMode="SRC_ATOP" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="430.0" prefWidth="850.0">
+                                                   <children>
+                                                      <Pane layoutX="310.0" layoutY="10.0" prefHeight="34.0" prefWidth="270.0" style="-fx-background-color: white; -fx-border-color: black;">
+                                                         <children>
+                                                            <Group layoutX="5.0" layoutY="5.0">
+                                                               <children>
+                                                                  <Label layoutY="5.0" text="Limit of q-axis current [A]" />
+                                                                  <TextField fx:id="value_q_current_limit" alignment="CENTER_RIGHT" layoutX="170.0" prefHeight="25.0" prefWidth="90.0" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Pane>
+                                                      <Pane layoutX="25.0" layoutY="10.0" prefHeight="34.0" prefWidth="270.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1.0;">
+                                                         <children>
+                                                            <Group layoutX="5.0" layoutY="5.0">
+                                                               <children>
+                                                                  <Label layoutY="5.0" text="Speed control period [s]" />
+                                                                  <TextField fx:id="value_control_period" alignment="CENTER_RIGHT" layoutX="170.0" prefHeight="25.0" prefWidth="90.0" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Pane>
+                                                      <Group layoutX="25.0" layoutY="50.0">
+                                                         <children>
+                                                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="90.0" stroke="BLACK" strokeType="INSIDE" width="270.0" />
+                                                            <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="Reference Speed" />
+                                                            <Group layoutX="5.0" layoutY="30.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Step of speed climbing [rpm]" />
+                                                                  <TextField fx:id="value_climbing" alignment="CENTER_RIGHT" layoutX="170.0" prefHeight="25.0" prefWidth="90.0" />
+                                                               </children>
+                                                            </Group>
+                                                            <Group layoutX="5.0" layoutY="60.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Max rotational speed [rpm]" />
+                                                                  <TextField fx:id="value_max_rotation" alignment="CENTER_RIGHT" layoutX="170.0" prefHeight="25.0" prefWidth="90.0" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Group>
+                                                      <Group layoutX="400.0" layoutY="50.0">
+                                                         <children>
+                                                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="90.0" stroke="BLACK" strokeType="INSIDE" width="215.0" />
+                                                            <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="Speed PI" />
+                                                            <Group layoutX="5.0" layoutY="30.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Speed PI loop omega" />
+                                                                  <TextField fx:id="value_pi_omega" alignment="CENTER_RIGHT" layoutX="120.0" prefHeight="25.0" prefWidth="80.0" />
+                                                               </children>
+                                                            </Group>
+                                                            <Group layoutX="5.0" layoutY="60.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Speed PI loop zeta" />
+                                                                  <TextField fx:id="value_pi_zeta" alignment="CENTER_RIGHT" layoutX="120.0" prefHeight="25.0" prefWidth="80.0" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Group>
+                                                      <Group layoutX="660.0" layoutY="50.0">
+                                                         <children>
+                                                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="40.0" stroke="BLACK" strokeType="INSIDE" width="130.0" />
+                                                            <CheckBox fx:id="value_flux_weakening" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Flux weakening" />
+                                                         </children>
+                                                      </Group>
+                                                      <Group layoutX="25.0" layoutY="301.0">
+                                                         <children>
+                                                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="90.0" stroke="BLACK" strokeType="INSIDE" width="270.0" />
+                                                            <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="Low Pass Filter" />
+                                                            <Group layoutX="5.0" layoutY="30.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Speed LPF omega [rad/s]" />
+                                                                  <TextField fx:id="value_lpf_omega" alignment="CENTER_RIGHT" layoutX="170.0" prefHeight="25.0" prefWidth="90.0" />
+                                                               </children>
+                                                            </Group>
+                                                            <Group layoutX="5.0" layoutY="60.0">
+                                                               <children>
+                                                                  <Label layoutY="-4.0" prefHeight="32.0" prefWidth="150.0" text="Cutoff frequency of phase error [rad]" wrapText="true">
+                                                                     <font>
+                                                                        <Font name="Arial" size="12.0" />
+                                                                     </font></Label>
+                                                                  <TextField fx:id="value_lpf_cutoff_freq" alignment="CENTER_RIGHT" layoutX="170.0" prefHeight="25.0" prefWidth="90.0" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Group>
+                                                      <Line endX="95.0" layoutX="295.0" layoutY="65.0" />
+                                                      <Line endX="-22.0" layoutX="681.0" layoutY="65.0" startX="-65.0" />
+                                                      <Line endX="58.0" layoutX="790.0" layoutY="60.0" />
+                                                      <Line endX="58.0" layoutX="790.0" layoutY="80.0" />
+                                                      <Line endX="395.50006103515625" endY="0.207122802734375" layoutX="311.0" layoutY="314.0" startX="-15.999969482421875" />
+                                                      <Line endX="-58.0" endY="43.0" layoutX="765.0" layoutY="47.0" startX="-57.79278564453125" startY="266.29290771484375" />
+                                                      <Line endX="-58.0" endY="43.0" layoutX="785.0" layoutY="47.0" startX="-58.0" startY="176.5" />
+                                                      <Line endX="-58.5" endY="43.0" layoutX="805.0" layoutY="47.0" startX="-58.5" startY="155.5" />
+                                                      <Line endX="710.0" layoutX="138.0" layoutY="416.0" startX="-4.0000152587890625" startY="1.0" />
+                                                      <Line endX="-57.5" endY="13.0" layoutX="404.0" layoutY="54.0" startX="-57.0" startY="128.0" />
+                                                      <Line endX="-58.0" endY="46.0" layoutX="588.0" layoutY="104.0" startX="-57.99993896484375" startY="205.0" />
+                                                      <Line endX="500.5" layoutX="348.0" layoutY="183.0" />
+                                                      <Polyline fill="WHITE" layoutX="485.0" layoutY="133.0" points="-97.0, -59.0, -97.0, -76.0, -86.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="747.0" layoutY="133.0" points="-97.0, -59.0, -97.0, -76.0, -86.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="230.0" layoutY="461.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="804.0" layoutY="160.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="824.0" layoutY="160.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="844.0" layoutY="160.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="627.0" layoutY="210.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Line endX="100.0" layoutX="748.0" layoutY="203.0" />
+                                                      <Line endX="120.0" layoutX="728.0" layoutY="223.0" />
+                                                      <Circle layoutX="346.0" layoutY="65.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                                      <Circle layoutX="530.0" layoutY="314.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                                      <Label layoutX="360.0" layoutY="48.0" styleClass="symbol1" text="ω*" />
+                                                      <Label layoutX="830.0" layoutY="167.0" styleClass="symbol1" text="ω*" />
+                                                      <Label layoutX="136.0" layoutY="401.0" styleClass="symbol1" text="ω" />
+                                                      <Group layoutX="142.0" layoutY="245.0" />
+                                                      <Group layoutX="540.0" layoutY="150.0">
+                                                         <children>
+                                                            <Label styleClass="symbol1" text="ω" />
+                                                            <Label layoutX="9.0" layoutY="7.0" styleClass="symbol1" text="LPF" />
+                                                         </children>
+                                                      </Group>
+                                                      <Group layoutX="674.0" layoutY="101.0">
+                                                         <children>
+                                                            <Label styleClass="symbol1" text="ω" />
+                                                            <Label layoutX="9.0" layoutY="7.0" styleClass="symbol1" text="LPF" />
+                                                         </children>
+                                                      </Group>
+                                                      <Label layoutX="733.0" layoutY="104.0" styleClass="symbol1" text="id" />
+                                                      <Label layoutX="712.0" layoutY="104.0" styleClass="symbol1" text="iq" />
+                                                      <Label layoutX="830.0" layoutY="42.0" styleClass="symbol1" text="id*" />
+                                                      <Label layoutX="830.0" layoutY="65.0" styleClass="symbol1" text="iq*" />
+                                                      <Label layoutX="625.0" layoutY="48.0" text="iq**">
+                                                         <font>
+                                                            <Font name="Segoe UI Italic" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Group layoutX="53.0" layoutY="155.0">
+                                                         <children>
+                                                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="38.0" layoutX="-28.0" stroke="BLACK" strokeType="INSIDE" width="280.0" />
+                                                            <Group layoutX="-14.0" layoutY="7.0">
+                                                               <children>
+                                                                  <ComboBox fx:id="value_selection_speed_observer" layoutX="150.0" prefHeight="25.0" prefWidth="110.0" promptText="Normal" visibleRowCount="2" />
+                                                                  <Label layoutX="-9.0" layoutY="5.0" text="Selection of speed observer" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Group>
+                                                      <Label layoutX="149.0" layoutY="285.0" styleClass="symbol1" text="LPF" />
+                                                      <Group layoutX="24.0" layoutY="204.0">
+                                                         <children>
+                                                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" stroke="BLACK" strokeType="INSIDE" width="270.0" />
+                                                            <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="Sensorless to Open-loop Transition" />
+                                                            <Group layoutX="5.0" layoutY="30.0">
+                                                               <children>
+                                                                  <Label layoutY="5.0" text="Speed at Id climbing [rpm]" />
+                                                                  <TextField fx:id="value_id_climbing" alignment="CENTER_RIGHT" layoutX="170.0" prefHeight="25.0" prefWidth="90.0" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Group>
+                                                      <Pane layoutX="594.0" layoutY="10.0" prefHeight="34.0" prefWidth="216.0" style="-fx-background-color: white; -fx-border-color: black;">
+                                                         <children>
+                                                            <Group layoutX="5.0" layoutY="5.0">
+                                                               <children>
+                                                                  <Label layoutY="5.0" text="Natural frequency" />
+                                                                  <TextField fx:id="value_natural_freq" alignment="CENTER_RIGHT" layoutX="107.0" prefHeight="25.0" prefWidth="90.0" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Pane>
+                                                      <Polyline fill="WHITE" layoutX="233.0" layoutY="334.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Label layoutX="139.0" layoutY="277.0" styleClass="symbol1" text="ω" />
+                                                      <Line endX="-58.0" endY="53.0" layoutX="194.0" layoutY="222.0" startX="-57.99993896484375" startY="80.0" />
+                                                      <Line endX="-58.0" endY="53.0" layoutX="191.0" layoutY="349.0" startX="-57.99993896484375" startY="68.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab fx:id="tab_openloop" closable="false" text="Openloop State">
+                                          <content>
+                                            <AnchorPane blendMode="SRC_ATOP" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="430.0" prefWidth="850.0">
+                                                   <children>
+                                                      <Group layoutX="711.0" layoutY="155.5">
+                                                         <children>
+                                                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0f0f0" height="48.0" stroke="BLACK" strokeType="INSIDE" width="60.0" />
+                                                            <Circle fill="WHITE" layoutX="45.0" layoutY="24.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                                            <Circle fill="WHITE" layoutX="19.0" layoutY="39.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                                            <Circle fill="WHITE" layoutX="19.0" layoutY="9.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                                            <Line endX="-489.0" endY="66.0" layoutX="534.0" layoutY="-47.0" startX="-515.0" startY="61.0" />
+                                                            <Line endX="-586.0" endY="56.5" layoutX="645.0" layoutY="-33.0" startX="-595.0" startY="56.5" />
+                                                            <Line endX="-589.0" endY="56.5" layoutX="603.0" layoutY="-17.0" startX="-602.0" startY="56.5" />
+                                                            <Line endX="-589.0" endY="56.0" layoutX="603.0" layoutY="-47.0" startX="-602.0" startY="56.0" />
+                                                         </children>
+                                                      </Group>
+                                                      <Group layoutX="25.0" layoutY="50.0">
+                                                         <children>
+                                                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" stroke="BLACK" strokeType="INSIDE" width="265.0" />
+                                                            <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="Current Reference" />
+                                                            <Group layoutX="5.0" layoutY="30.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Reference of d-axis current [A]" />
+                                                                  <TextField fx:id="value_d_current_reference" alignment="CENTER_RIGHT" layoutX="175.0" prefHeight="25.0" prefWidth="80.0" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Group>
+                                                      <Group layoutX="425.0" layoutY="255.0">
+                                                         <children>
+                                                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="90.0" stroke="BLACK" strokeType="INSIDE" width="246.0" />
+                                                            <CheckBox fx:id="value_open_loop_damping" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Open Loop Damping" />
+                                                            <Group layoutX="10.0" layoutY="30.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Estimated d-axis HPF omega" />
+                                                                  <TextField fx:id="value_hpf_omega" alignment="CENTER_RIGHT" layoutX="160.0" prefHeight="25.0" prefWidth="70.0" />
+                                                               </children>
+                                                            </Group>
+                                                            <Group layoutX="10.0" layoutY="60.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Open-loop damping zeta" />
+                                                                  <TextField fx:id="value_open_loop_damping_zeta" alignment="CENTER_RIGHT" layoutX="160.0" prefHeight="25.0" prefWidth="70.0" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Group>
+                                                      <Group layoutX="390.0" layoutY="185.0">
+                                                         <children>
+                                                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" stroke="BLACK" strokeType="INSIDE" width="298.0" />
+                                                            <CheckBox fx:id="value_torque_compensation" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Torque compensation for sensorless transition" />
+                                                            <Group layoutX="10.0" layoutY="30.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Period between open-loop to BEMF [s]" />
+                                                                  <TextField fx:id="value_bemf_control" alignment="CENTER_RIGHT" layoutX="213.0" prefHeight="25.0" prefWidth="70.0" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Group>
+                                                      <Pane layoutX="25.0" layoutY="10.0" prefHeight="34.0" prefWidth="300.0" style="-fx-border-color: black; -fx-background-color: white; -fx-border-width: 1;">
+                                                         <children>
+                                                            <Group layoutX="5.0" layoutY="5.0">
+                                                               <children>
+                                                                  <Label layoutY="5.0" text="Step of speed feedback at open-loop" />
+                                                                  <TextField fx:id="value_open_loop_feedback" alignment="CENTER_RIGHT" layoutX="210.0" prefHeight="25.0" prefWidth="80.0" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Pane>
+                                                      <Group layoutX="25.0" layoutY="135.0">
+                                                         <children>
+                                                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="210.0" stroke="BLACK" strokeType="INSIDE" width="340.0" />
+                                                            <Label layoutX="5.0" layoutY="5.0" styleClass="heading1" text="Open-loop to Sensorless Transition" wrapText="true" />
+                                                            <Group layoutX="5.0" layoutY="30.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Step of d-axis current climbing [A/ms]" />
+                                                                  <TextField fx:id="value_d_current_climbing" alignment="CENTER_RIGHT" layoutX="255.0" prefHeight="25.0" prefWidth="70.0" />
+                                                               </children>
+                                                            </Group>
+                                                            <Group layoutX="5.0" layoutY="60.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Step of d-axis current descending [A/ms]" />
+                                                                  <TextField fx:id="value_d_current_descending" alignment="CENTER_RIGHT" layoutX="255.0" prefHeight="25.0" prefWidth="70.0" />
+                                                               </children>
+                                                            </Group>
+                                                            <Group layoutX="5.0" layoutY="90.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Step of q-axis current descending ratio" />
+                                                                  <TextField fx:id="value_q_current_descending_ratio" alignment="CENTER_RIGHT" layoutX="255.0" prefHeight="25.0" prefWidth="70.0" />
+                                                               </children>
+                                                            </Group>
+                                                            <Group layoutX="7.0" layoutY="146.0" />
+                                                            <Group layoutX="5.0" layoutY="120.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Threshold of speed control descending [rad/s]" />
+                                                                  <TextField fx:id="value_control_descending" alignment="CENTER_RIGHT" layoutX="255.0" prefHeight="25.0" prefWidth="70.0" />
+                                                               </children>
+                                                            </Group>
+                                                            <Group layoutX="5.0" layoutY="150.0">
+                                                               <children>
+                                                                  <Label layoutY="4.0" text="Threshold of speed control climbing [rad/s]" />
+                                                                  <TextField fx:id="value_control_climbing" alignment="CENTER_RIGHT" layoutX="255.0" prefHeight="25.0" prefWidth="70.0" />
+                                                               </children>
+                                                            </Group>
+                                                            <Group layoutX="5.0" layoutY="180.0">
+                                                               <children>
+                                                                  <Label layoutY="-4.0" prefHeight="32.0" prefWidth="225.0" text="Phase error to decide sensorless switch timing [rad]" wrapText="true" />
+                                                                  <TextField fx:id="value_phase_error" alignment="CENTER_RIGHT" layoutX="255.0" prefHeight="25.0" prefWidth="70.0" />
+                                                               </children>
+                                                            </Group>
+                                                         </children>
+                                                      </Group>
+                                                      <Group layoutX="734.0" layoutY="45.0">
+                                                         <children>
+                                                            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="-3.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="88.0" />
+                                                            <Label alignment="CENTER" layoutX="4.0" layoutY="8.0" prefHeight="40.0" prefWidth="75.0" styleClass="heading1" text="Flux Weakening" textAlignment="CENTER" wrapText="true" />
+                                                         </children>
+                                                      </Group>
+                                                      <Line endX="30.0" layoutX="820.0" layoutY="60.0" />
+                                                      <Line endX="30.0" layoutX="820.0" layoutY="80.0" />
+                                                      <Line endX="-57.5" endY="122.5" layoutX="846.0" layoutY="-25.0" startX="-57.5" startY="204.0" />
+                                                      <Line endX="-216.0" layoutX="1004.0" layoutY="179.0" startX="-234.0" />
+                                                      <Line endX="-206.0" endY="-0.5" layoutX="917.0" layoutY="165.0" startX="-546.0" />
+                                                      <Line endX="180.0" layoutX="587.0" layoutY="145.0" startX="-221.0" />
+                                                      <Line endX="-58.0" endY="124.0" layoutX="826.0" layoutY="-26.0" startX="-58.5" startY="170.5" />
+                                                      <Line endX="-58.5" endY="165.0" layoutX="191.0" layoutY="-54.0" startX="-58.5" startY="185.0" />
+                                                      <Polyline fill="WHITE" layoutX="865.0" layoutY="168.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="885.0" layoutY="168.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="229.0" layoutY="184.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -48.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="626.0" layoutY="234.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -48.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Line endX="-59.5" endY="100.5" layoutX="589.0" layoutY="-32.0" startX="-59.5" startY="207.0" />
+                                                      <Line endX="-272.0" layoutX="802.0" layoutY="68.0" startX="-513.0" />
+                                                      <Line endX="-461.0" layoutX="851.0" layoutY="195.5" startX="-486.0" />
+                                                      <Line endX="-459.5" endY="-0.5" layoutX="1170.0" layoutY="195.5" startX="-483.0" />
+                                                      <Line endX="282.0" layoutX="566.0" layoutY="360.0" />
+                                                      <Line endX="663.0" layoutX="186.0" layoutY="380.0" />
+                                                      <Line endX="683.0" layoutX="166.0" layoutY="400.0" />
+                                                      <Line endX="703.0" layoutX="146.0" layoutY="420.0" />
+                                                      <Line endY="70.0" layoutX="145.0" layoutY="350.0" />
+                                                      <Line endY="50.0" layoutX="165.0" layoutY="350.0" />
+                                                      <Line endY="30.0" layoutX="185.0" layoutY="350.0" />
+                                                      <Line endX="-59.5" endY="100.5" layoutX="468.0" layoutY="147.0" startX="-59.5" startY="272.0" />
+                                                      <Polyline fill="WHITE" layoutX="242.0" layoutY="416.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="262.0" layoutY="416.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="282.0" layoutY="416.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Line endX="-59.5" endY="100.5" layoutX="590.0" layoutY="250.0" startX="-59.5" startY="130.5" />
+                                                      <Polyline fill="WHITE" layoutX="628.0" layoutY="416.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="506.0" layoutY="315.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Polyline fill="WHITE" layoutX="471.0" layoutY="263.0" points="-97.0, -59.0, -97.0, -76.0, -107.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                                      <Line endX="-59.5" endY="100.5" layoutX="759.0" layoutY="96.0" startX="-59.5" startY="185.5" />
+                                                      <Line endX="-476.0" layoutX="1175.0" layoutY="282.0" startX="-504.0" />
+                                                      <Circle layoutX="699.0" layoutY="196.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                                      <Circle layoutX="531.0" layoutY="381.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                                      <Circle layoutX="409.0" layoutY="420.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                                      <Label layoutX="144.0" layoutY="117.0" styleClass="symbol1" text="id" />
+                                                      <Label layoutX="539.0" layoutY="168.0" styleClass="symbol1" text="id" />
+                                                      <Label layoutX="795.0" layoutY="114.0" styleClass="symbol1" text="iq*" />
+                                                      <Label layoutX="744.0" layoutY="115.0" styleClass="symbol1" text="id*" />
+                                                      <Label layoutX="829.0" layoutY="42.0" styleClass="symbol1" text="id*" />
+                                                      <Label layoutX="829.0" layoutY="64.0" styleClass="symbol1" text="iq*" />
+                                                      <Label layoutX="678.0" layoutY="148.0" styleClass="symbol1" text="iq*" />
+                                                      <Label layoutX="711.0" layoutY="209.0" styleClass="symbol1" text="iq*=0" />
+                                                      <Group layoutX="780.0" layoutY="340.0">
+                                                         <children>
+                                                            <Label layoutX="10.0" styleClass="symbol1" text="ω" />
+                                                            <Label layoutX="20.0" layoutY="5.0" styleClass="symbol1" text="Comp" />
+                                                         </children>
+                                                      </Group>
+                                                      <Label layoutX="536.0" layoutY="358.0" styleClass="symbol1" text="ed" />
+                                                      <Label layoutX="188.0" layoutY="358.0" styleClass="symbol1" text="ed" />
+                                                      <Label layoutX="147.0" layoutY="359.0" styleClass="symbol1" text="Δθ" />
+                                                      <Label layoutX="377.0" layoutY="174.0" styleClass="symbol1" text="iτ" />
+                                                      <Label layoutX="168.0" layoutY="358.0" styleClass="symbol1" text="eq" />
+                                                      <Label layoutX="388.0" layoutY="255.0" text="Δθ">
+                                                         <font>
+                                                            <Font name="Segoe UI Italic" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Line endY="15.0" layoutX="565.0" layoutY="345.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </content>
+                              </TitledPane>
+                              <Pane id="pane-driver" fx:id="pane_driver" layoutX="1060.0" layoutY="84.0" prefHeight="320.0" prefWidth="120.0" AnchorPane.topAnchor="80.0">
+                                 <children>
+                                    <Label layoutX="5.0" layoutY="140.0" prefHeight="44.0" prefWidth="110.0" text="ADC and PWM Modulation Driver" textAlignment="CENTER" wrapText="true" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane id="pane-current" fx:id="pane_current" layoutX="900.0" layoutY="84.0" prefHeight="320.0" prefWidth="120.0" AnchorPane.topAnchor="80.0">
+                                 <children>
+                                    <Label layoutX="8.0" layoutY="140.0" prefHeight="37.0" prefWidth="104.0" text="Motor Current Controller" textAlignment="CENTER" wrapText="true" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Pane id="pane-estimate" fx:id="pane_estimate" layoutX="900.0" layoutY="434.0" prefHeight="82.0" prefWidth="120.0" AnchorPane.topAnchor="427.0">
+                                 <children>
+                                    <Label layoutX="17.0" layoutY="22.0" prefHeight="38.0" prefWidth="85.0" text="Motor Angle Driver" textAlignment="CENTER" wrapText="true" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Pane>
+                              <Group fx:id="grp_openloop" layoutX="871.0" layoutY="431.0" AnchorPane.topAnchor="422.0">
+                                 <children>
+                                    <Line endX="28.0" layoutY="20.0" />
+                                    <Line endX="28.0" layoutY="40.0" />
+                                    <Line endX="25.0" />
+                                    <Polyline fill="WHITE" layoutX="116.0" layoutY="67.0" points="-97.0, -59.0, -97.0, -76.0, -86.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                 </children>
+                              </Group>
+                              <Group layoutX="870.5" layoutY="132.0" AnchorPane.topAnchor="120.5">
+                                 <children>
+                                    <Line endX="30.0" layoutX="150.0" layoutY="13.5" />
+                                    <Line endX="30.0" layoutX="150.0" layoutY="33.5" />
+                                    <Line endX="30.0" layoutX="150.0" layoutY="53.5" />
+                                    <Line endX="30.0" layoutX="158.0" layoutY="152.5" />
+                                    <Line endX="30.0" layoutX="158.0" layoutY="172.5" />
+                                    <Polyline fill="WHITE" layoutX="276.5" layoutY="81.0" points="-97.0, -59.0, -97.0, -76.0, -86.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="276.5" layoutY="101.0" points="-97.0, -59.0, -97.0, -76.0, -86.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="276.5" layoutY="121.0" points="-97.0, -59.0, -97.0, -76.0, -86.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="257.0" layoutY="219.0" points="-97.0, -59.0, -97.0, -76.0, -107.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="257.0" layoutY="240.0" points="-97.0, -59.0, -97.0, -76.0, -107.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Line endX="55.0" layoutX="308.0" layoutY="33.5" />
+                                    <Line endX="55.0" layoutX="308.0" layoutY="53.5" />
+                                    <Line endX="55.0" layoutX="308.0" layoutY="13.5" />
+                                    <Line endX="20.0" layoutX="315.0" layoutY="152.5" />
+                                    <Line endX="34.0" layoutX="312.0" layoutY="172.5" />
+                                    <Polyline fill="WHITE" layoutX="416.0" layoutY="240.0" points="-97.0, -59.0, -97.0, -76.0, -107.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="416.0" layoutY="219.0" points="-97.0, -59.0, -97.0, -76.0, -107.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="461.5" layoutY="81.0" points="-97.0, -59.0, -97.0, -76.0, -86.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="456.5" layoutY="101.0" points="-97.0, -59.0, -97.0, -76.0, -86.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="461.5" layoutY="121.0" points="-97.0, -59.0, -97.0, -76.0, -86.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Line endX="22.0" layoutY="30.5" />
+                                    <Line endX="22.0" layoutY="10.5" />
+                                    <Polyline fill="WHITE" layoutX="116.5" layoutY="78.0" points="-97.0, -59.0, -97.0, -76.0, -86.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="116.5" layoutY="98.0" points="-97.0, -59.0, -97.0, -76.0, -86.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Line endY="140.0" layoutX="336.0" layoutY="12.5" strokeDashOffset="1.0" strokeLineJoin="ROUND" strokeMiterLimit="100.0" />
+                                    <Line endX="-0.5" endY="141.0" layoutX="359.0" layoutY="52.5" strokeDashOffset="1.0" strokeLineJoin="ROUND" strokeMiterLimit="100.0" />
+                                    <Circle layoutX="336.5" layoutY="12.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Circle layoutX="359.5" layoutY="52.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Label layoutX="153.5" styleClass="symbol1" text="Vu" />
+                                    <Label layoutX="153.5" layoutY="19.0" styleClass="symbol1" text="Vv" />
+                                    <Label layoutX="153.5" layoutY="39.0" styleClass="symbol1" text="Vw" />
+                                    <Label layoutX="311.5" styleClass="symbol1" text="Mu" />
+                                    <Label layoutX="311.5" layoutY="20.0" styleClass="symbol1" text="Mv" />
+                                    <Label layoutX="311.5" layoutY="38.0" styleClass="symbol1" text="Mw" />
+                                    <Label layoutX="322.5" layoutY="138.0" styleClass="symbol1" text="iu" />
+                                    <Label layoutX="322.5" layoutY="158.0" styleClass="symbol1" text="iv" />
+                                    <Label layoutX="163.5" layoutY="138.0" styleClass="symbol1" text="iu" />
+                                    <Label layoutX="163.5" layoutY="158.0" styleClass="symbol1" text="iv" />
+                                    <Polyline fill="WHITE" layoutX="257.0" layoutY="260.0" points="-97.0, -59.0, -97.0, -76.0, -107.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Line endX="30.0" layoutX="161.0" layoutY="192.5" />
+                                    <Label layoutX="164.5" layoutY="178.0" styleClass="symbol1" text="iw" />
+                                    <Polyline fill="WHITE" layoutX="416.0" layoutY="261.0" points="-97.0, -59.0, -97.0, -76.0, -107.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Line endX="38.0" layoutX="320.0" layoutY="193.5" />
+                                    <Label layoutX="323.5" layoutY="179.0" styleClass="symbol1" text="iw" />
+                                    <Circle layoutX="347.0" layoutY="33.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <Line endY="138.0" layoutX="347.0" layoutY="34.5" strokeDashOffset="1.0" strokeLineJoin="ROUND" strokeMiterLimit="100.0" />
+                                 </children>
+                              </Group>
+                              <Line endX="28.0" layoutX="871.0" layoutY="488.0" AnchorPane.topAnchor="487.5" />
+                              <Group layoutX="905.0" layoutY="409.0" AnchorPane.topAnchor="400.0">
+                                 <children>
+                                    <Line endY="25.0" layoutX="34.5" />
+                                    <Line endY="25.0" layoutX="59.5" />
+                                    <Line endY="25.0" layoutX="84.5" />
+                                    <Line endY="25.0" layoutX="104.5" />
+                                    <Line endY="24.0" layoutX="14.5" layoutY="0.5" />
+                                    <Polyline fill="WHITE" layoutX="181.0" layoutY="75.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -48.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="201.0" layoutY="75.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -48.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="156.0" layoutY="75.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -48.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="131.0" layoutY="75.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -48.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Polyline fill="WHITE" layoutX="111.0" layoutY="68.0" points="-89.0, -59.0, -105.0, -59.0, -97.0, -70.0, -89.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                    <Label layoutX="110.0" styleClass="symbol1" text="id" />
+                                    <Label layoutX="88.0" styleClass="symbol1" text="iq" />
+                                    <Label layoutX="38.0" layoutY="1.0" styleClass="symbol1" text="Vq*" />
+                                    <Label layoutX="63.0" layoutY="1.0" styleClass="symbol1" text="Vd*" />
+                                    <Label layoutY="9.0" styleClass="symbol1" text="θ" />
+                                 </children>
+                              </Group>
+                              <Group id="group-motor" layoutX="1280.0" layoutY="166.0" AnchorPane.topAnchor="113.0">
+                                 <children>
+                                    <Circle fx:id="circle_motor" fill="#ffffff00" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="circle-motor" />
+                                    <Label blendMode="SRC_ATOP" layoutX="-17.0" layoutY="-8.0" mouseTransparent="true" text="PMSM" textAlignment="CENTER" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Group>
+                              <Group fx:id="grp_sensorless" layoutX="872.0" layoutY="256.0" AnchorPane.topAnchor="246.0">
+                                 <children>
+                                    <Line endX="28.0" layoutX="-1.0" layoutY="-2.0" />
+                                    <Line endX="28.0" layoutX="-1.0" layoutY="38.0" />
+                                    <Line endX="28.0" layoutX="-1.0" layoutY="18.0" />
+                                    <Polyline fill="WHITE" layoutX="115.0" layoutY="66.0" points="-97.0, -59.0, -97.0, -76.0, -86.5, -68.0, -97.0, -59.0" strokeType="INSIDE" strokeWidth="0.5" />
+                                 </children>
+                              </Group>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Group>
+               </children>
+            </StackPane>
+         </children>
+      </Group>
+  </content>
+</ScrollPane>
