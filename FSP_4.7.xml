@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Properties>
+	<Propety id="test"  type="TextField" fxID="value_newTextField"/>
+	<Propety id="test2" type="CheckBox" fxID="value_newCheckBox"/>
+	<Propety id="test3" type="ComboBox" fxID="value_newComboBox" options="one shunt,two shunt,three shunt"/>
+</Properties>
