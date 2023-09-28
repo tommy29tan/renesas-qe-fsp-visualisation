@@ -1,1 +1,1 @@
-# renesas_qe_fsp_visualisation
+# renesas-qe-fsp-visualisation
