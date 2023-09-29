@@ -19,7 +19,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fx:id="scroll_speed" fitToHeight="true" fitToWidth="true" pannable="true" prefHeight="550.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.renesas.cdt.ddsc.v11n.apltool.motor.sensorless.controller.MotorSpeedController">
+<ScrollPane fx:id="scroll_speed" fitToHeight="true" fitToWidth="true" pannable="true" prefHeight="550.0" prefWidth="1350.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.renesas.cdt.ddsc.v11n.apltool.motor.sensorless.controller.MotorSpeedController">
   <content>
       <Group autoSizeChildren="false">
          <children>
@@ -206,6 +206,7 @@
                                                       <Label layoutX="139.0" layoutY="277.0" styleClass="symbol1" text="ω" />
                                                       <Line endX="-58.0" endY="53.0" layoutX="194.0" layoutY="222.0" startX="-57.99993896484375" startY="80.0" />
                                                       <Line endX="-58.0" endY="53.0" layoutX="191.0" layoutY="349.0" startX="-57.99993896484375" startY="68.0" />
+                                                      <Label layoutX="438.0" layoutY="256.0" text="Github" />
                                                    </children>
                                                 </AnchorPane>
                                           </content>
