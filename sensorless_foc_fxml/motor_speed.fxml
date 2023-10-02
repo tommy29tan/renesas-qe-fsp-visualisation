@@ -96,7 +96,7 @@
                                                       <Group layoutX="660.0" layoutY="50.0">
                                                          <children>
                                                             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="40.0" stroke="BLACK" strokeType="INSIDE" width="130.0" />
-                                                            <CheckBox fx:id="value_flux_weakening" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Flux weakening" />
+                                                            <CheckBox id="value_flux_weakening" fx:id="value_flux_weakening" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Flux weakening" />
                                                          </children>
                                                       </Group>
                                                       <Group layoutX="25.0" layoutY="301.0">
@@ -173,7 +173,7 @@
                                                             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="38.0" layoutX="-28.0" stroke="BLACK" strokeType="INSIDE" width="280.0" />
                                                             <Group layoutX="-14.0" layoutY="7.0">
                                                                <children>
-                                                                  <ComboBox fx:id="value_selection_speed_observer" layoutX="150.0" prefHeight="25.0" prefWidth="110.0" promptText="Normal" visibleRowCount="2" />
+                                                                  <ComboBox id="value_selection_speed_observer" fx:id="value_selection_speed_observer" layoutX="150.0" prefHeight="25.0" prefWidth="110.0" promptText="Normal" visibleRowCount="2" />
                                                                   <Label layoutX="-9.0" layoutY="5.0" text="Selection of speed observer" />
                                                                </children>
                                                             </Group>
@@ -187,7 +187,7 @@
                                                             <Group layoutX="5.0" layoutY="30.0">
                                                                <children>
                                                                   <Label layoutY="5.0" text="Speed at Id climbing [rpm]" />
-                                                                  <TextField fx:id="value_id_climbing" alignment="CENTER_RIGHT" layoutX="170.0" prefHeight="25.0" prefWidth="90.0" />
+                                                                  <TextField id="value_id_climbing" fx:id="value_id_climbing" alignment="CENTER_RIGHT" layoutX="170.0" prefHeight="25.0" prefWidth="90.0" />
                                                                </children>
                                                             </Group>
                                                          </children>
@@ -206,7 +206,6 @@
                                                       <Label layoutX="139.0" layoutY="277.0" styleClass="symbol1" text="ω" />
                                                       <Line endX="-58.0" endY="53.0" layoutX="194.0" layoutY="222.0" startX="-57.99993896484375" startY="80.0" />
                                                       <Line endX="-58.0" endY="53.0" layoutX="191.0" layoutY="349.0" startX="-57.99993896484375" startY="68.0" />
-                                                      <Label layoutX="438.0" layoutY="256.0" text="Github" />
                                                    </children>
                                                 </AnchorPane>
                                           </content>
