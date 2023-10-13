@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Controllers>
 	<Controller>
-		<ControllerName>MotorSpeedController</ControllerName>
+		<ControllerName>Motor Speed Controller</ControllerName>
 		<View>https://tommy29tan.github.io/renesas-qe-fsp-visualisation/sensorless_foc_fxml/motor_speed.fxml</View>
 		<Properties>
 			<Propety id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_natural_frequency"  type="TextField" fxID="value_natural_freq"/>
