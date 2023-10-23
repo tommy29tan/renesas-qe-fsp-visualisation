@@ -8,8 +8,7 @@
 				<Option>Disturbance</Option>
 			</Property>
 			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_natural_frequency" type="TextField" display="Natrueal frequency" traverseIndex="10"/>
-			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.fluxweakening" type="CheckBox" display="Flux weakening" traverseIndex="11">
-			</Property>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.fluxweakening" type="CheckBox" display="Flux weakening" traverseIndex="11"/>
 		</Properties>
 	</Controller>
 </Controllers>
