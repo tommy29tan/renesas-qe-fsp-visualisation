@@ -4,13 +4,13 @@
 		<ControllerName>Motor Speed Controller</ControllerName>
 		<Properties>
 			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.observer_select" type="ComboBox" display="Selection of speed observer" traverseIndex="3">
-		            <option display="Normal"/>
-                            <option display="Disturbance"/>
+		            <Option>Normal</Option>
+			    <Option>Disturbance</Option>
 			</Property>
 			<Propety id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_natural_frequency"  type="TextField" display="Natrueal frequency" traverseIndex="10"/>
 			<Propety id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.fluxweakening" type="CheckBox" display="Flux weakening" traverseIndex="11">
-			    <option display="Disable"/>
-                            <option display="Enable"/>
+			     <Option>Disable</Option>
+			     <Option>Enable</Option>
 			</Property>	
 		</Properties>
 	</Controller>
