@@ -1,0 +1,36 @@
+{
+  "categories": {
+    "com.renesas.qe.tool": {
+      "name": "QE tool",
+      "description": "Tool used in QE."
+    }
+  },
+  "packages": {
+    "com.renesas.qe.tool.fsp-visu-package-v510": {
+      "type": "extractable",
+      "name": "FSP Visualization package",
+      "description": "FSP Visualization for Motor",
+      "category": "com.renesas.qe.tool",
+      "versionString": "5.1.0",
+      "file": "fsp-visu-resources.zip",
+      "installSize": 1000,
+      "downloadInfo": {
+        "uri": "http://tool-support.renesas.com/e2studio/qe/tools/fsp-visu-resources.zip",
+        "size": 643507576,
+        "hash": "SHA-512 generated hash"
+      },
+      "filter": "(|(family=*ra;*)",
+      "extractSteps": [
+        {
+          "function": "EXTRACT",
+          "args": [
+            "zip",
+            "${packageFile}",
+            "${installDir}/QE_Motor/fsp-visu-resources/"
+          ],
+          "outVarName": "qeExtractLoc"
+        }
+      ]
+    }
+  }
+}
