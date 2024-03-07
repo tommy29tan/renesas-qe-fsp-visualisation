@@ -3,12 +3,34 @@
 	<Controller>
 		<ControllerName>Motor Speed Controller</ControllerName>
 		<Properties>
-			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.observer_select" fxId="value_selection_speed_observer" type="ComboBox" display="Selection of speed observer" traverseIndex="3">
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_speed_ctrl_period" fxId="value_control_period" type="TextField" traverseIndex="0"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_limit_speed_change" fxId="value_climbing" type="TextField" traverseIndex="1"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_max_speed_rad" fxId="value_max_rotation" type="TextField" traverseIndex="2"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.observer_select" fxId="value_selection_speed_observer" type="ComboBox" traverseIndex="3">
 				<Option>Normal</Option>
 				<Option>Disturbance</Option>
 			</Property>
-			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_natural_frequency" fxId="value_natural_freq" type="TextField" display="Natrueal frequency" traverseIndex="10"/>
-			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.fluxweakening"  fxId="value_flux_weakening" type="CheckBox" display="Flux weakening" traverseIndex="11"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_id_up_speed_rad" fxId="value_id_climbing" type="TextField" traverseIndex="4"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_omega_t" fxId="value_lpf_omega" type="TextField" traverseIndex="5"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_phase_err_lpf_cut_freq" fxId="value_lpf_cutoff_freq" type="TextField" traverseIndex="6"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_iq_limit" fxId="value_q_current_limit" type="TextField" traverseIndex="7"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_speed_omega" fxId="value_pi_omega" type="TextField" traverseIndex="8"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_speed_zeta" fxId="value_pi_zeta" type="TextField" traverseIndex="9"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_natural_frequency" fxId="value_natural_freq" type="TextField" traverseIndex="10"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.fluxweakening" fxId="value_flux_weakening" type="CheckBox" traverseIndex="11"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_ol_fb_speed_limit_rate" fxId="value_open_loop_feedback" type="TextField" traverseIndex="12"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_ol_id_ref" fxId="value_d_current_reference" type="TextField" traverseIndex="13"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_ol_id_up_step" fxId="value_d_current_climbing" type="TextField" traverseIndex="14"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_ol_id_down_step" fxId="value_d_current_descending" type="TextField" traverseIndex="15"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_ol_iq_down_step_ratio" fxId="value_q_current_descending_ratio" type="TextField" traverseIndex="16"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_id_down_speed_rad" fxId="value_control_descending" type="TextField" traverseIndex="17"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_id_up_speed_rad" fxId="value_control_climbing" type="TextField" traverseIndex="18"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_switch_phase_err_rad" fxId="value_phase_error" type="TextField" traverseIndex="19"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.less_switch" fxId="value_torque_compensation" type="CheckBox" traverseIndex="20"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_opl2less_sw_time" fxId="value_bemf_control" type="TextField" traverseIndex="21"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.openloop_damping" fxId="value_open_loop_damping" type="CheckBox" traverseIndex="22"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_ed_hpf_omega" fxId="value_hpf_omega" type="TextField" traverseIndex="23"/>
+			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_ol_damping_zeta" fxId="value_open_loop_damping_zeta" type="TextField" traverseIndex="24"/>
 		</Properties>
 	</Controller>
 </Controllers>
