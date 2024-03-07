@@ -19,7 +19,7 @@
         "size": 111616,
         "hash": "6C8C17D34DA36F6EB23A23F9693FF4D3BA6525363AA3A45B844FAD49FEF9792591D41193C268D462AD9393644F2D4EEAFF2BC541B9739BAB18BF48DD2072ACFE"
       },
-      "filter": "(|(family=*ra;*)",
+      "filter": "(|(family=*ra;*))",
       "extractSteps": [
         {
           "function": "EXTRACT",
