@@ -17,7 +17,7 @@
       "downloadInfo": {
         "uri": "http://tool-support.renesas.com/e2studio/qe/tools/fsp-visu-resources.zip",
         "size": 643507576,
-        "hash": "SHA-512 generated hash"
+        "hash": "32C32A403B4B2A1EB41E3455343162301FF7D4F0A301F6A461D159EFB4E8A602D66DC590A86858ED4E16E6EFD66FB17FDA5E81279184FFC4B7CA7C59F7483837"
       },
       "filter": "(|(family=*ra;*)",
       "extractSteps": [
