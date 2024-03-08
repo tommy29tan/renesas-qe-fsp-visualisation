@@ -32,6 +32,8 @@
 			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_ed_hpf_omega" fxId="value_hpf_omega" type="TextField"/>
 			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_ol_damping_zeta" fxId="value_open_loop_damping_zeta" type="TextField"/>
 		</Properties>
+	</Controller>
+	<Controller>
 		<ControllerName>Motor Sensorless Vector Control</ControllerName>
 		<Properties>
 			<Property id="module.middleware.motor_sensorless.f_over_current" fxId="value_over_current" type="TextField"/>
@@ -39,6 +41,8 @@
 			<Property id="module.middleware.motor_sensorless.f_over_speed" fxId="value_over_speed" type="TextField"/>
 			<Property id="module.middleware.motor_sensorless.f_low_voltage" fxId="value_low_voltage" type="TextField"/>
 		</Properties>
+	</Controller>
+	<Controller>
 		<ControllerName>Motor Parameters</ControllerName>
 		<Properties>
 			<MultiProperty fxId="value_pp" type="TextField">
