@@ -101,15 +101,28 @@
 			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.port_vn" fxId="value_pwm_out_vn" type="TextField"/>
 			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.port_wp" fxId="value_pwm_out_wp" type="TextField"/>
 			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.port_wn" fxId="value_pwm_out_wn" type="TextField"/>
-			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.gtioca_stop_level" fxId="value_gtioca_stop" type="TextField"/>
-			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.gtiocb_stop_level" fxId="value_gtiocb_stop" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.gtioca_stop_level" fxId="value_gtioca_stop" type="ComboBox">
+				<Option>Low</Option>
+				<Option>High</Option>
+			</Property>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.gtiocb_stop_level" fxId="value_gtiocb_stop" type="ComboBox">
+				<Option>Low</Option>
+				<Option>High</Option>
+			</Property>
 			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.requires.three_phase::module.driver.three_phase.channel_u" fxId="value_pwm_uchan" type="TextField"/>
 			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.requires.three_phase::module.driver.three_phase.channel_v" fxId="value_pwm_vchan" type="TextField"/>
 			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.requires.three_phase::module.driver.three_phase.channel_w" fxId="value_pwm_wchan" type="TextField"/>
 			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.ad_resolution" fxId="value_ad_resolution" type="TextField"/>
 			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.adc_group" fxId="value_ad_scan_group" type="TextField"/>
-			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.interrupt_adc" fxId="value_ad_interrupt_module" type="TextField"/>
-			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.trigger_phase" fxId="value_interr_phase" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.interrupt_adc" fxId="value_ad_interrupt_module" type="ComboBox">
+				<Option>1st</Option>
+				<Option>2nd</Option>
+			</Property>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.trigger_phase" fxId="value_interr_phase" type="ComboBox">
+				<Option>PHASE_U</Option>
+				<Option>PHASE_V</Option>
+				<Option>PHASE_W</Option>
+			</Property>
 			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.iu_ad_ch" fxId="value_ad_uchan" type="TextField"/>
 			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.iu_ad_unit" fxId="value_ad_uunit" type="TextField"/>
 			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.iv_ad_ch" fxId="value_ad_vchan" type="TextField"/>
@@ -132,12 +145,26 @@
 	<Controller>
 		<ControllerName>Motor Current Controller</ControllerName>
 		<Properties>
-			<MultiProperty fxId="value_pp" type="TextField">
-				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.u2_mtr_pp"/>
-				<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.u2_mtr_pp"/>
-				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_pp"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.f_carrier_freq" fxId="value_carrier_freq" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.f_current_omega" fxId="value_pi_omega" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.f_current_zeta" fxId="value_pi_zeta" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.u_decimation" fxId="value_current_control" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.period_magnitude" fxId="value_period_mag" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.voltage_comp" fxId="value_compensation_error" type="CheckBox"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.voltage_comp.v1" fxId="value_v1" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.voltage_comp.v2" fxId="value_v2" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.voltage_comp.v3" fxId="value_v3" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.voltage_comp.v4" fxId="value_v4" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.voltage_comp.v5" fxId="value_v5" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.voltage_comp.i1" fxId="value_i1" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.voltage_comp.i2" fxId="value_i2" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.voltage_comp.i3" fxId="value_i3" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.voltage_comp.i4" fxId="value_i4" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.voltage_comp.i5" fxId="value_i5" type="TextField"/>
+			<MultiProperty fxId="value_input_voltage" type="TextField">
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.f_ilimit"/>
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.input_vdc"/>
 			</MultiProperty>
-			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_nominal_current" fxId="value_nominal_current" type="TextField"/>
 		</Properties>
 	</Controller>
 </Controllers>
