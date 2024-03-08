@@ -75,6 +75,7 @@
 				<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_mtr_j"/>
 				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_j"/>
 			</MultiProperty>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_nominal_current" fxId="value_nominal_current" type="TextField"/>
 		</Properties>
 	</Controller>
 </Controllers>
