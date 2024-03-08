@@ -78,4 +78,66 @@
 			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_nominal_current" fxId="value_nominal_current" type="TextField"/>
 		</Properties>
 	</Controller>
+	<Controller>
+		<ControllerName>Motor Angle Driver</ControllerName>
+		<Properties>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.e_obs_omega" fxId="value_bemf_freq" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.e_obs_zeta" fxId="value_bemf_damping" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.pll_est_omega" fxId="value_bemf_freq_pll" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.pll_est_zeta" fxId="value_bemf_damping_pll" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.ctrl_period" fxId="value_control_period" type="TextField"/>
+		</Properties>
+	</Controller>
+	<Controller>
+		<ControllerName>ADC and PWM Modulation Driver</ControllerName>
+		<Properties>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.pwm_timer_freq" fxId="value_pwm_freq" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.pwm_carrier_freq" fxId="value_pwm_period" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.dead_time" fxId="value_dead_time" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.max_duty" fxId="value_max_duty" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.port_up" fxId="value_pwm_out_up" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.port_un" fxId="value_pwm_out_un" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.port_vp" fxId="value_pwm_out_vp" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.port_vn" fxId="value_pwm_out_vn" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.port_wp" fxId="value_pwm_out_wp" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.port_wn" fxId="value_pwm_out_wn" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.gtioca_stop_level" fxId="value_gtioca_stop" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.gtiocb_stop_level" fxId="value_gtiocb_stop" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.requires.three_phase::module.driver.three_phase.channel_u" fxId="value_pwm_uchan" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.requires.three_phase::module.driver.three_phase.channel_v" fxId="value_pwm_vchan" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.requires.three_phase::module.driver.three_phase.channel_w" fxId="value_pwm_wchan" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.ad_resolution" fxId="value_ad_resolution" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.adc_group" fxId="value_ad_scan_group" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.interrupt_adc" fxId="value_ad_interrupt_module" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.trigger_phase" fxId="value_interr_phase" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.iu_ad_ch" fxId="value_ad_uchan" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.iu_ad_unit" fxId="value_ad_uunit" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.iv_ad_ch" fxId="value_ad_vchan" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.iv_ad_unit" fxId="value_ad_vunit" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.iw_ad_ch" fxId="value_ad_wchan" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.iw_ad_unit" fxId="value_ad_wunit" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.sin_ad_ch" fxId="value_ad_sinchan" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.sin_ad_unit" fxId="value_ad_sinunit" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.cos_ad_ch" fxId="value_ad_coschan" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.cos_ad_unit" fxId="value_ad_cosunit" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.vdc_ad_ch" fxId="value_ad_voltchan" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.vdc_ad_unit" fxId="value_ad_voltunit" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.current_range" fxId="value_current_range" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.ad_current_offset" fxId="value_current_offset" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.offset_count" fxId="value_current_offset_count" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.vdc_range" fxId="value_voltage_range" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.driver::module.middleware.motor_driver.ad_voltage_conversion" fxId="value_voltage_conversion_level" type="TextField"/>
+		</Properties>
+	</Controller>
+	<Controller>
+		<ControllerName>Motor Current Controller</ControllerName>
+		<Properties>
+			<MultiProperty fxId="value_pp" type="TextField">
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.u2_mtr_pp"/>
+				<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.u2_mtr_pp"/>
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_pp"/>
+			</MultiProperty>
+			<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_nominal_current" fxId="value_nominal_current" type="TextField"/>
+		</Properties>
+	</Controller>
 </Controllers>
