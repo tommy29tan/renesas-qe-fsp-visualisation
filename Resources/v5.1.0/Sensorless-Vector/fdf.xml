@@ -32,5 +32,45 @@
 			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_ed_hpf_omega" fxId="value_hpf_omega" type="TextField"/>
 			<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f_ol_damping_zeta" fxId="value_open_loop_damping_zeta" type="TextField"/>
 		</Properties>
+		<ControllerName>Motor Sensorless Vector Control</ControllerName>
+		<Properties>
+			<Property id="module.middleware.motor_sensorless.f_over_current" fxId="value_over_current" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.f_over_voltage" fxId="value_over_voltage" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.f_over_speed" fxId="value_over_speed" type="TextField"/>
+			<Property id="module.middleware.motor_sensorless.f_low_voltage" fxId="value_low_voltage" type="TextField"/>
+		</Properties>
+		<ControllerName>Motor Parameters</ControllerName>
+		<Properties>
+			<MultiProperty fxId="value_pp" type="TextField">
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.u2_mtr_pp"/>
+				<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.u2_mtr_pp"/>
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_pp"/>
+			</MultiProperty>
+			<MultiProperty fxId="value_r" type="TextField">
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.f4_mtr_r"/>
+				<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_mtr_r"/>
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_r"/>
+			</MultiProperty>
+			<MultiProperty fxId="value_id" type="TextField">
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.f4_mtr_ld"/>
+				<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_mtr_ld"/>
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_ld"/>
+			</MultiProperty>
+			<MultiProperty fxId="value_iq" type="TextField">
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.f4_mtr_lq"/>
+				<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_mtr_lq"/>
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_lq"/>
+			</MultiProperty>
+			<MultiProperty fxId="value_m" type="TextField">
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.f4_mtr_m"/>
+				<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_mtr_m"/>
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_m"/>
+			</MultiProperty>
+			<MultiProperty fxId="value_j" type="TextField">
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.f4_mtr_j"/>
+				<Property id="module.middleware.motor_sensorless.requires.speed::module.middleware.motor_speed.f4_mtr_j"/>
+				<Property id="module.middleware.motor_sensorless.requires.current::module.middleware.motor_current.requires.angle::module.middleware.motor_estimate.mtr_j"/>
+			</MultiProperty>
+		</Properties>
 	</Controller>
 </Controllers>
