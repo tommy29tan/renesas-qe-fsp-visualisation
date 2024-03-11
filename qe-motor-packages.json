@@ -26,7 +26,7 @@
           "args": [
             "zip",
             "${packageFile}",
-            "${installDir}/QE_Motor/FSP/"
+            "${installDir}/QE_Motor/FSP/fsp-visu-resources-v510/"
           ],
           "outVarName": "qeExtractLoc"
         }
